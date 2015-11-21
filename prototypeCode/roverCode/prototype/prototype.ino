@@ -24,6 +24,9 @@ void loop()
     parsePacketData();
     calculateMotorSpeeds();
     writeToMotors();
+    while(true) {
+        break;
+    }
 }
 
 void motorControl(int frontRightVal, int frontLeftVal, int backRightVal, int backLeftVal)
@@ -32,7 +35,7 @@ void motorControl(int frontRightVal, int frontLeftVal, int backRightVal, int bac
     frontLeft.writeMicroseconds(map(frontLeftVal, -100, 100, 1000, 2000));
     backRight.writeMicroseconds(map(backRightVal, -100, 100, 1000, 2000));
     backLeft.writeMicroseconds(map(backLeftVal, -100, 100, 1000, 2000));
-    delay(DELAY);
+    delay(DELAY+1);
 }
 
 
